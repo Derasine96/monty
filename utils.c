@@ -3,6 +3,7 @@
 static instruction_t ops[] = {
 	{"push", stack_push},
 	{"pall", stack_pall},
+	{"pint", stack_pint},
 	{NULL, NULL}
 };
 
@@ -44,7 +45,7 @@ void op_call(stack_t **head, char **tokens)
 
 /**
  * validate - checks if second arg of a token array is valid
- * @token: tokens value to check
+ * @tokens: tokens value to check
  * @head: pointer to a head
  */
 void validate(char **tokens, stack_t **head)

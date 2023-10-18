@@ -1,6 +1,8 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#define _POSIX_C_SOURCE 200809L
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -47,6 +49,6 @@ void validate(char **tokens, stack_t **head);
 void op_call(stack_t **head, char **tokens);
 void free_stack(stack_t **head);
 char **split_tokens(char *buffer);
-ssize_t getline(char **lineptr, size_t *n, FILE *stream);
+void stack_pint(stack_t **head, unsigned int n);
 
 #endif /* MONTY_H */
