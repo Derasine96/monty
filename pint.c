@@ -6,11 +6,19 @@
  */
 void stack_pint(stack_t **head, unsigned int n)
 {
-	if (!head || !(*head))
+	stack_t *temp;
+
+	if (head == NULL || *head == NULL)
 	{
 		fprintf(stderr, "L%u: can't pint, stack empty\n", n);
 		exit(EXIT_FAILURE);
 	}
 
-	fprintf(stdout, "%d\n", (*head)->n);
+	temp = *head;
+
+	if (temp != NULL)
+	{
+		fprintf(stdout, "%d\n", (*head)->n);
+		return;
+	}
 }
