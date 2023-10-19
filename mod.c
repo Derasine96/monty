@@ -10,7 +10,7 @@ void stack_mod(stack_t **head, unsigned int n)
 
 	if (head == NULL || *head == NULL || (*head)->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't div, stack too short\n", n);
+		fprintf(stderr, "L%u: can't mod, stack too short\n", n);
 		exit(EXIT_FAILURE);
 	}
 

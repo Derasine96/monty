@@ -58,5 +58,9 @@ void stack_sub(stack_t **head, unsigned int n);
 void stack_div(stack_t **head, unsigned int n);
 void stack_mul(stack_t **head, unsigned int n);
 void stack_mod(stack_t **head, unsigned int n);
+void stack_pchar(stack_t **head, unsigned int n);
+void stack_pstr(stack_t **head, unsigned int n);
+void stack_rotl(stack_t **head, unsigned int n);
+void stack_rotr(stack_t **head, unsigned int n);
 
 #endif /* MONTY_H */

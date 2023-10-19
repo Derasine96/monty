@@ -12,6 +12,10 @@ static instruction_t ops[] = {
 	{"div", stack_div},
 	{"mul", stack_mul},
 	{"mod", stack_mod},
+	{"pchar", stack_pchar},
+	{"pstr", stack_pstr},
+	{"rotl", stack_rotl},
+	{"rotr", stack_rotr},
 	{NULL, NULL}
 };
 
