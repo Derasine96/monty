@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * _swap - swaps the data in two nodes
+ * stack_swap - swaps the data in two nodes
  * @head: pointer to a stack_t
  * @n: line number
  */
