@@ -36,10 +36,15 @@ void op_call(stack_t **head, char **tokens)
 							tokens[0]);
 					exit(EXIT_FAILURE);
 				}
-				ops[i].f(head, line_number);
+
+				if (tokens[1])
+					ops[i].f(head, atoi(tokens[1]));
+				else
+					ops[i].f(head, 0);
 			}
 			break;
 		}
+		i++;
 	}
 }
 
