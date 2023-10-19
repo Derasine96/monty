@@ -51,5 +51,6 @@ void free_stack(stack_t **head);
 char **split_tokens(char *buffer);
 void stack_pint(stack_t **head, unsigned int n);
 void stack_pop(stack_t **head, unsigned int line_no);
+void stack_swap(stack_t **head, unsigned int line_no);
 
 #endif /* MONTY_H */
