@@ -55,5 +55,8 @@ void stack_swap(stack_t **head, unsigned int line_no);
 void stack_add(stack_t **head, unsigned int n);
 void stack_nop(stack_t **head, unsigned int n);
 void stack_sub(stack_t **head, unsigned int n);
+void stack_div(stack_t **head, unsigned int n);
+void stack_mul(stack_t **head, unsigned int n);
+void stack_mod(stack_t **head, unsigned int n);
 
 #endif /* MONTY_H */

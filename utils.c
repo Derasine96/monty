@@ -9,6 +9,9 @@ static instruction_t ops[] = {
 	{"add", stack_add},
 	{"nop", stack_nop},
 	{"sub", stack_sub},
+	{"div", stack_div},
+	{"mul", stack_mul},
+	{"mod", stack_mod},
 	{NULL, NULL}
 };
 
