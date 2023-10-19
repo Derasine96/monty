@@ -4,6 +4,7 @@ static instruction_t ops[] = {
 	{"push", stack_push},
 	{"pall", stack_pall},
 	{"pint", stack_pint},
+	{"pop", stack_pop},
 	{NULL, NULL}
 };
 
