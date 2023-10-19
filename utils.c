@@ -8,6 +8,7 @@ static instruction_t ops[] = {
 	{"swap", stack_swap},
 	{"add", stack_add},
 	{"nop", stack_nop},
+	{"sub", stack_sub},
 	{NULL, NULL}
 };
 
