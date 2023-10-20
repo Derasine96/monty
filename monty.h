@@ -11,7 +11,7 @@
 #include <fcntl.h>
 #include <ctype.h>
 
-extern unsigned int line_number;
+extern unsigned int data_struct;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -45,8 +45,8 @@ typedef struct instruction_s
 
 void stack_push(stack_t **head, unsigned int n);
 void stack_pall(stack_t **head, unsigned int n);
-void validate(char **tokens, stack_t **head);
-void op_call(stack_t **head, char **tokens);
+void validate(char **tokens, stack_t **head, unsigned int line_number);
+void op_call(stack_t **head, char **tokens, unsigned int line_number);
 void free_stack(stack_t **head);
 char **split_tokens(char *buffer);
 void stack_pint(stack_t **head, unsigned int n);
@@ -62,5 +62,8 @@ void stack_pchar(stack_t **head, unsigned int n);
 void stack_pstr(stack_t **head, unsigned int n);
 void stack_rotl(stack_t **head, unsigned int n);
 void stack_rotr(stack_t **head, unsigned int n);
+void _stack(stack_t **head, unsigned int n);
+void _queue(stack_t **head, unsigned int n);
+void add_queue(stack_t **head, stack_t *new_node);
 
 #endif /* MONTY_H */

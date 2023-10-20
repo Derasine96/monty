@@ -12,5 +12,5 @@ void stack_sub(stack_t **head, unsigned int n)
 		exit(EXIT_FAILURE);
 	}
 	(*head)->next->n = ((*head)->next->n) - ((*head)->n);
-	stack_pop(head, line_number);
+	stack_pop(head, n);
 }

@@ -24,9 +24,14 @@ void stack_push(stack_t **head, unsigned int data)
 		(*head) = newNode;
 	else
 	{
-		(*head)->prev = newNode;
-		newNode->next = *head;
-		*head = newNode;
+		if (data_struct == 1)
+			add_queue(head, newNode);
+		else
+		{
+			(*head)->prev = newNode;
+			newNode->next = *head;
+			*head = newNode;
+		}
 	}
 }
 

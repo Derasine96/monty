@@ -1,6 +1,10 @@
 #include "monty.h"
 
-unsigned int line_number = 0;
+/**
+ * data_struct - global variable to store data structure
+ * when the value is 0, it's a stack and when the value is 1, it's a queue
+ */
+unsigned int data_struct = 0;
 
 /**
  * main - control program flow
@@ -10,6 +14,7 @@ unsigned int line_number = 0;
  */
 int main(int argc, char *argv[])
 {
+	unsigned int line_number = 0;
 	char **tokens = NULL;
 	stack_t *head = NULL;
 	char *buffer = NULL;
@@ -37,7 +42,7 @@ int main(int argc, char *argv[])
 		tokens = split_tokens(buffer);
 		if (tokens)
 		{
-			op_call(&head, tokens);
+			op_call(&head, tokens, line_number);
 			free(tokens);
 		}
 	}

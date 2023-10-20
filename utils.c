@@ -16,8 +16,9 @@ static instruction_t ops[] = {
 	{"pstr", stack_pstr},
 	{"rotl", stack_rotl},
 	{"rotr", stack_rotr},
-	{NULL, NULL}
-};
+	{"stack", _stack},
+	{"queue", _queue},
+	{NULL, NULL}};
 
 /**
  * op_call - calls appropriate function
@@ -26,7 +27,7 @@ static instruction_t ops[] = {
  *
  * Return: nothing
  */
-void op_call(stack_t **head, char **tokens)
+void op_call(stack_t **head, char **tokens, unsigned int line_number)
 {
 	int i = 0, flag = 0;
 
@@ -40,7 +41,7 @@ void op_call(stack_t **head, char **tokens)
 			if (ops[i].f)
 			{
 				if (strcmp(tokens[0], "push") == 0)
-					validate(tokens, head);
+					validate(tokens, head, line_number);
 
 				if (tokens[1])
 					ops[i].f(head, atoi(tokens[1]));
@@ -58,7 +59,6 @@ void op_call(stack_t **head, char **tokens)
 		fprintf(stderr, "L%u: unknown instruction %s\n",
 				line_number,
 				tokens[0]);
-		fflush(stderr);
 		exit(EXIT_FAILURE);
 	}
 }
@@ -68,14 +68,13 @@ void op_call(stack_t **head, char **tokens)
  * @tokens: tokens value to check
  * @head: pointer to a head
  */
-void validate(char **tokens, stack_t **head)
+void validate(char **tokens, stack_t **head, unsigned int line_number)
 {
 	int i = 0;
 
 	if (!tokens[1])
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
-		fflush(stderr);
 		if (*head)
 			free_stack(head);
 		free(tokens);
@@ -89,7 +88,6 @@ void validate(char **tokens, stack_t **head)
 		if (isdigit(tokens[1][i]) == 0)
 		{
 			fprintf(stderr, "L%u: usage: push integer\n", line_number);
-			fflush(stderr);
 			if (*head)
 				free_stack(head);
 			free(tokens);
