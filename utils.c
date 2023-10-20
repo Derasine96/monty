@@ -24,6 +24,7 @@ static instruction_t ops[] = {
  * op_call - calls appropriate function
  * @tokens: pointer to array of operations string
  * @head: pointer to a head of the list
+ * @line_number: line number
  *
  * Return: nothing
  */
@@ -67,6 +68,7 @@ void op_call(stack_t **head, char **tokens, unsigned int line_number)
  * validate - checks if second arg of a token array is valid
  * @tokens: tokens value to check
  * @head: pointer to a head
+ * @line_number: line number
  */
 void validate(char **tokens, stack_t **head, unsigned int line_number)
 {
