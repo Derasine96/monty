@@ -1,9 +1,5 @@
 #include "monty.h"
 
-/**
- * data_struct - global variable to store data structure
- * when the value is 0, it's a stack and when the value is 1, it's a queue
- */
 unsigned int data_struct = 0;
 
 /**
