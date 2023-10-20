@@ -58,6 +58,7 @@ void op_call(stack_t **head, char **tokens)
 		fprintf(stderr, "L%u: unknown instruction %s\n",
 				line_number,
 				tokens[0]);
+		fflush(stderr);
 		exit(EXIT_FAILURE);
 	}
 }
@@ -74,6 +75,7 @@ void validate(char **tokens, stack_t **head)
 	if (!tokens[1])
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+		fflush(stderr);
 		if (*head)
 			free_stack(head);
 		free(tokens);
@@ -87,6 +89,7 @@ void validate(char **tokens, stack_t **head)
 		if (isdigit(tokens[1][i]) == 0)
 		{
 			fprintf(stderr, "L%u: usage: push integer\n", line_number);
+			fflush(stderr);
 			if (*head)
 				free_stack(head);
 			free(tokens);

@@ -13,6 +13,7 @@ void stack_push(stack_t **head, unsigned int data)
 	if (!newNode)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
+		fflush(stderr);
 		exit(EXIT_FAILURE);
 	}
 
@@ -45,6 +46,7 @@ void stack_pall(stack_t **head, unsigned int __attribute__((__unused__)) n)
 	while (temp)
 	{
 		fprintf(stdout, "%d\n", temp->n);
+		fflush(stdout);
 		temp = temp->next;
 	}
 }

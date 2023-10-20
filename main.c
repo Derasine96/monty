@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
+		fflush(stderr);
 		exit(EXIT_FAILURE);
 	}
 
@@ -26,6 +27,7 @@ int main(int argc, char *argv[])
 	if (fp == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+		fflush(stderr);
 		exit(EXIT_FAILURE);
 	}
 
